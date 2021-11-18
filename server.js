@@ -26,9 +26,6 @@ database.sequelize.sync({ ALTER: true })
 
   app.use(cookieParser());
 
-  // Santize data
-  app.use(mongoSanitize());
-
   // set security headers
   app.use(helmet());
 
