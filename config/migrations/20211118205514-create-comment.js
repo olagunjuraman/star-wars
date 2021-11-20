@@ -16,17 +16,9 @@ module.exports = {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        text: {
-          type: Sequelize.STRING,
-          allowNull: false,
-        },
-        movieId: {
+        episode_id: {
           type: Sequelize.INTEGER,
           allowNull: false,
-          references: {
-            model: 'Movies',
-            key: 'id',
-          },
         },
         createdAt: {
           allowNull: false,

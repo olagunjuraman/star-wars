@@ -18,6 +18,10 @@ class Comment extends Model {
         type: Sequelize.STRING,
         allowNull: false
     },
+    episode_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+    },
 
   };
 
@@ -35,23 +39,7 @@ class Comment extends Model {
     return super.init(Comment.modelFields, { sequelize });
   }
 
-  /**
-   * Associations for the Comment model
-   *
-   * @static
-   * @memberof Comment
-   *
-   * @param {any} models the metacare api models
-   *
-   * @returns {null} no return
-   */
-   static associate(models) {
-    const { Movies } = models;
 
-    Comment.belongsTo(Movies, {
-      foreignKey: 'movieId',
-    });
-  }
 }
 
 module.exports = Comment

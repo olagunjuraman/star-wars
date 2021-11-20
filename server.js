@@ -7,11 +7,11 @@ const rateLimit = require("express-rate-limit");
 const cors = require("cors");
 const  database = require("./src/models/");
 
+const errorHandler = require('./src/middlewares/error')
 
 //Route files
-// const conference = require("./src/routes/conference.route");
-// const talk = require("./src/routes/talk.route");
-// const usertalk = require('./src/routes/usertalk.route');
+const movie = require("./src/routes/movie.route");
+const comment = require("./src/routes/comment.route");
 
 
 
@@ -45,17 +45,23 @@ database.sequelize.sync({ ALTER: true })
   app.use(cors())
 
   // mount route files
-  // app.use("/api/v1/conference", conference);
-  // app.use('/api/v1/talk', talk);
-  // app.use('/api/v1/user-talk', usertalk);
+  app.use("/api/v1/movies", movie);
+  app.use('/api/v1/comments/', comment);
 
 
 
-  // app.use(errorHandler)
+
+  app.use(errorHandler)
 
   const PORT = process.env.PORT || 6000;
 
   app.listen(PORT, ()=>{
     console.log(`The server is listening on ${PORT} in ${process.env.NODE_ENV}`);
   });
+
+
+
+
+
+
 
