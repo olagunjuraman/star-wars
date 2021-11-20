@@ -23,7 +23,6 @@ const config = {
   },
   operatorsAliases: false,
   logging: false,
-  ssl: { rejectUnauthorized: false },
   seederStorage: 'sequelize',
   seederStorageTableName: 'SequelizeSeeders',
 };
@@ -31,6 +30,7 @@ const config = {
 if (!devMode) {
   config.ssl = true;
   config.dialectOptions.ssl = {
+    rejectUnauthorized: false,
     require: true,
   };
 }
