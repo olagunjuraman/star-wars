@@ -22,6 +22,8 @@ const config = {
     multipleStatements: true,
   },
   operatorsAliases: false,
+  logging: false,
+  ssl: { rejectUnauthorized: false },
   seederStorage: 'sequelize',
   seederStorageTableName: 'SequelizeSeeders',
 };
