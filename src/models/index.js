@@ -35,7 +35,10 @@ const config = require("../../config/sequelize");
 // }
 
 
-const sequelize = new Sequelize(config.url, config);
+const sequelize = new Sequelize(config.url, config, {
+  logging: false,
+  ssl: { rejectUnauthorized: false } //solved the problem with self signed sertificate
+});
 const database = {};
 
 fs.readdirSync(__dirname)
