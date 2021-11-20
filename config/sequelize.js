@@ -3,10 +3,10 @@ const getEnv = require('dotenv').config;
 getEnv();
 
 const databaseUrls = {
-  development: process.env.DB_URL,
-  staging: process.env.DB_URL,
-  test: process.env.DB_URL,
-  production: process.env.DB_URL,
+  development: process.env.DATABASE_URL,
+  staging: process.env.DATABASE_URL,
+  test: process.env.DATABASE_URL,
+  production: process.env.DATABSE_URL,
 };
 
 const environment = process.env.NODE_ENV || 'development';
