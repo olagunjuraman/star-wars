@@ -9,7 +9,7 @@
   "scripts": {
     "start:dev": "yarn migrate && nodemon server.js",
     "dev": "nodemon server.js",
-    "start": "node server.js",
+    "start": " yarn migrate && node server.js",
     "migrate": "yarn sequelize db:migrate"
   },
   "author": "",
